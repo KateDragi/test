@@ -1,0 +1,312 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+img{
+    vertical-align: top;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+button{
+    cursor: pointer;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #1D1D1B;
+    font-size: 14px;
+}
+
+[class*=__container]{
+    max-width: 1150px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+.header{
+
+}
+
+.top-header{
+    background-color:#F8F8F8;
+}
+
+.top-header__container{
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 99px;
+    font-size: 12px;
+}
+.top-header__map-pin{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.top-header__map-pin::before{
+    content: "";
+    background-image: url("images/map-pin.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+}
+.top-header__links{
+    display: flex;
+    flex: 1 1 auto;
+    gap: 24px;
+}
+
+.top-header__link{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-header__link:not(:first-child)::after{
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("images/arrow.svg");
+    width: 10px;
+    height: 10px;
+}
+
+.top-header__number{
+    color: #696969;
+}
+.header__main{
+
+}
+.main-header__container{
+    padding-top: 34px;
+    padding-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 46px;
+}
+.main-header__logo{
+    margin-right: 10px;
+}
+.main-header__search{
+    position: relative;
+    width: 412px;
+    height: 48px;
+}
+
+.main-header__input{
+    border: 1px solid #D4D4D4;
+    padding: 17px 48px 17px 17px;
+    width: 100%;
+}
+
+.main-header__input::placeholder{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.main-header__search-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 56px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E0001B;
+}
+
+.main-header__submenus{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-submenu{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 11px 16px 13px;
+}
+
+.header-submenu:hover{
+    background-color: #f8f8f8;
+}
+
+
+/*
+
+Не стоит делать через псевдо-элемент, так как используя js неизвестно как его потом изменять
+
+.header-submenu::after{
+    content: "3";
+    width: 17px;
+    height: 17px;
+    background-color: #E0001B;
+}
+
+Также вопрос не лучше ли было создать отдельный класс, который уже бы и назначал псевдоэлемент
+При этом добавляя его только туда где это необходимо, заранее высчитывая цифры 
+
+*/
+
+.header-submenu--favorite:after{
+    content: "3";
+    font-size: 12px;
+    color: #fff;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    background-color: #E0001B;
+    border-radius: 50%;
+}
+
+.header-submenu--cart::after{
+    content: "7";
+    font-size: 12px;
+    color: #fff;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    background-color: #E0001B;
+    border-radius: 50%;
+}
+
+.header-submenu::before{
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-submenu--favorite::before{
+    background-image: url("images/lover-1.svg");
+}
+
+.header-submenu--compare::before{
+    width: 28px;
+    height: 24px;
+    background-image: url("images/compare.svg");
+}
+
+.header-submenu--cart::before{
+    background-image: url("images/cart.svg");
+}
+
+.navigation-header__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+.navigation-header__catalog{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #E0001B;
+    padding: 16px 21px 16px 16px;
+}
+
+/* .navigation-header__catalog::before{
+    content: "";
+    width: 19px;
+    height: 12px;
+    background-image: url("images/catalog-burger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+.navigation-header__buttons{
+    display: flex;
+    background-color: #f8f8f8;
+}
+.navigation-header__button{
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 17px 16px 17px 24px;
+    transition: background-color 0.3s ease 0s;
+}
+
+.navigation-header__button:not(.navigation-header__button--discount)::before{
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+}
+
+.navigation-header__button--paper::before{
+    background-image: url("images/agenda.svg");
+}
+
+.navigation-header__button--school::before{
+    background-image: url("images/briefcase.svg");
+}
+
+.navigation-header__button--art::before{
+    background-image: url("images/stationery.svg");
+}
+
+.navigation-header__button--trade::before{
+    background-image: url("images/abacus.svg");
+}
+
+.navigation-header__button--discount:hover{
+    transition: all 0.3s ease 0s;
+    color: #fff;
+    background-color: #E0001B;
+}
+
+.navigation-header__button--discount svg{
+    transition: all 0.3s ease 0s;
+}
+
+.navigation-header__button--discount:hover svg{
+    stroke: #fff;
+}
+
+.navigation-header__button:not(.navigation-header__button--discount):hover{
+    background-color: rgb(213, 212, 212, 1);
+}
+
+.navigation-header__button:nth-child(3)::after{
+    content: "";
+    height: 80%;
+    background-color: rgba(29, 29, 27, 1);
+}
+
+.navigation-header__button--discount{
+    font-weight: 600;
+    color: #E0001B;
+}
+
+
